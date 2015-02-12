@@ -1,0 +1,426 @@
+0 HEAD
+0
+Invalid tag
+1 SOUR Family Echo
+1
+Invalid tag
+2 WWW http://www.familyecho.com/
+2
+Invalid tag
+1 FILE My Family
+1
+Invalid tag
+1 DATE 1 FEB 2015
+1
+Invalid tag
+1 DEST ANSTFILE
+1
+Invalid tag
+1 GEDC
+1
+Invalid tag
+2 VERS 5.5.1
+2
+Invalid tag
+2 FORM LINEAGE-LINKED
+2
+Invalid tag
+1 SUBM @I1@
+1
+Invalid tag
+2 NAME Jhon Smith
+2
+Invalid tag
+1 SUBN
+1
+Invalid tag
+1 CHAR UTF-8
+1
+Invalid tag
+0 @I1@ INDI
+0
+INDI
+1 NAME Jhon /Smith/
+1
+NAME
+2 GIVN Jhon
+2
+Invalid tag
+2 SURN Smith
+2
+Invalid tag
+2 _MARNM Smith
+2
+Invalid tag
+1 SEX M
+1
+SEX
+1 BIRT
+1
+BIRT
+2 DATE 2 MAR 1958
+2
+DATE
+1 FAMS @F1@
+1
+FAMS
+1 FAMC @F2@
+1
+FAMC
+0 @I2@ INDI
+0
+INDI
+1 NAME Gary /Smith/
+1
+NAME
+2 GIVN Gary
+2
+Invalid tag
+2 SURN Smith
+2
+Invalid tag
+2 _MARNM Smith
+2
+Invalid tag
+1 SEX M
+1
+SEX
+1 BIRT
+1
+BIRT
+2 DATE 1 JAN 1932
+2
+DATE
+1 FAMS @F2@
+1
+FAMS
+0 @I3@ INDI
+0
+INDI
+1 NAME Linda /Smith/
+1
+NAME
+2 GIVN Linda
+2
+Invalid tag
+2 SURN Smith
+2
+Invalid tag
+2 _MARNM Smith
+2
+Invalid tag
+1 SEX F
+1
+SEX
+1 BIRT
+1
+BIRT
+2 DATE 1 FEB 1930
+2
+DATE
+1 FAMS @F2@
+1
+FAMS
+0 @I4@ INDI
+0
+INDI
+1 NAME Fiona /Cox/
+1
+NAME
+2 GIVN Fiona
+2
+Invalid tag
+2 SURN Cox
+2
+Invalid tag
+2 _MARNM Smith
+2
+Invalid tag
+1 SEX F
+1
+SEX
+1 BIRT
+1
+BIRT
+2 DATE 2 MAR 1959
+2
+DATE
+1 FAMS @F1@
+1
+FAMS
+1 FAMS @F3@
+1
+FAMS
+0 @I5@ INDI
+0
+INDI
+1 NAME Peter /Smith/
+1
+NAME
+2 GIVN Peter
+2
+Invalid tag
+2 SURN Smith
+2
+Invalid tag
+2 _MARNM Smith
+2
+Invalid tag
+1 SEX M
+1
+SEX
+1 BIRT
+1
+BIRT
+2 DATE 5 MAY 1963
+2
+DATE
+1 FAMS @F4@
+1
+FAMS
+1 FAMC @F2@
+1
+FAMC
+0 @I6@ INDI
+0
+INDI
+1 NAME Shruti /Shah/
+1
+NAME
+2 GIVN Shruti
+2
+Invalid tag
+2 SURN Shah
+2
+Invalid tag
+2 _MARNM Smith
+2
+Invalid tag
+1 SEX F
+1
+SEX
+1 BIRT
+1
+BIRT
+2 DATE 5 JUL 1963
+2
+DATE
+1 FAMS @F4@
+1
+FAMS
+0 @I7@ INDI
+0
+INDI
+1 NAME David /Smith/
+1
+NAME
+2 GIVN David
+2
+Invalid tag
+2 SURN Smith
+2
+Invalid tag
+2 _MARNM Smith
+2
+Invalid tag
+1 SEX M
+1
+SEX
+1 BIRT
+1
+BIRT
+2 DATE 2 MAR 1987
+2
+DATE
+1 FAMC @F1@
+1
+FAMC
+0 @I8@ INDI
+0
+INDI
+1 NAME Shane /Smith/
+1
+NAME
+2 GIVN Shane
+2
+Invalid tag
+2 SURN Smith
+2
+Invalid tag
+2 _MARNM Smith
+2
+Invalid tag
+1 SEX M
+1
+SEX
+1 BIRT
+1
+BIRT
+2 DATE 1 FEB 1989
+2
+DATE
+1 FAMC @F4@
+1
+FAMC
+0 @I9@ INDI
+0
+INDI
+1 NAME Raj /Patel/
+1
+NAME
+2 GIVN Raj
+2
+Invalid tag
+2 SURN Patel
+2
+Invalid tag
+2 _MARNM Patel
+2
+Invalid tag
+1 SEX M
+1
+SEX
+1 BIRT
+1
+BIRT
+2 DATE 1 FEB 1954
+2
+DATE
+1 DEAT Y
+1
+DEAT
+2 DATE 4 APR 1984
+2
+DATE
+1 FAMS @F3@
+1
+FAMS
+0 @I10@ INDI
+0
+INDI
+1 NAME Peter /Patel/
+1
+NAME
+2 GIVN Peter
+2
+Invalid tag
+2 SURN Patel
+2
+Invalid tag
+2 _MARNM Patel
+2
+Invalid tag
+1 SEX M
+1
+SEX
+1 BIRT
+1
+BIRT
+2 DATE 1 JAN 1972
+2
+DATE
+1 FAMC @F3@
+1
+FAMC
+0 @I11@ INDI
+0
+INDI
+1 NAME Elizabeth /Smith/
+1
+NAME
+2 GIVN Elizabeth
+2
+Invalid tag
+2 SURN Smith
+2
+Invalid tag
+2 _MARNM Smith
+2
+Invalid tag
+1 SEX F
+1
+SEX
+1 BIRT
+1
+BIRT
+2 DATE 2 MAR 1989
+2
+DATE
+1 FAMC @F1@
+1
+FAMC
+0 @F1@ FAM
+0
+FAM
+1 HUSB @I1@
+1
+HUSB
+1 WIFE @I4@
+1
+WIFE
+1 CHIL @I7@
+1
+CHIL
+1 CHIL @I11@
+1
+CHIL
+1 MARR
+1
+MARR
+1 _CURRENT Y
+1
+Invalid tag
+0 @F3@ FAM
+0
+FAM
+1 HUSB @I9@
+1
+HUSB
+1 WIFE @I4@
+1
+WIFE
+1 CHIL @I10@
+1
+CHIL
+1 _CURRENT N
+1
+Invalid tag
+0 @F2@ FAM
+0
+FAM
+1 HUSB @I2@
+1
+HUSB
+1 WIFE @I3@
+1
+WIFE
+1 CHIL @I1@
+1
+CHIL
+1 CHIL @I5@
+1
+CHIL
+1 MARR
+1
+MARR
+1 _CURRENT Y
+1
+Invalid tag
+0 @F4@ FAM
+0
+FAM
+1 HUSB @I5@
+1
+HUSB
+1 WIFE @I6@
+1
+WIFE
+1 CHIL @I8@
+1
+CHIL
+1 _CURRENT Y
+1
+Invalid tag
+0 TRLR
+0
+TRLR
