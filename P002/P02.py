@@ -1,15 +1,20 @@
 import sys
 
+tags = {"INDI":0, "NAME":1, "SEX":1, "BIRT":1, "DEAT":1, "FAMC":1, "FAMS":1, "FAM":0, "MARR":1, "HUSB":1, "WIFE":1, "CHIL":1, "DIV":1, "DATE":2, "TRLR":0, "NOTE":0}
 
-def checkTag(st):
-	tags = ["INDI", "NAME", "SEX", "BIRT", "DEAT", "FAMC", "FAMS", "FAM", "MARR", "HUSB", "WIFE", "CHIL", "DIV", "DATE", "TRLR", "NOTE"]
-	for t in tags:
-		if st == t:
+def checkTag(st, level):
+	
+	if st not in tags:
+		return "Invalid tag"
+
+	else:
+		if tags[st] == level:
 			return st
 
-	return "Invalid tag"
+		else:
+			return "Invalid tag"
 
-f = open('My-Family-1-Feb-2015.ged','r');
+f = open('sample.ged','r');
 for line in f:
 
 	#write the whole line
@@ -17,16 +22,18 @@ for line in f:
 
 	l=line.split()
 	
+	lnum = int(l[0])
+	
 	#write the level number
-	print l[0]
+	print lnum
 
 	#print the tag, if it's valid
-	if l[0] =='0':
+	if lnum ==0:
 		if len(l) ==2:
-			print checkTag(l[1])
+			print checkTag(l[1], lnum)
 		else:
-			print checkTag(l[2])
+			print checkTag(l[2], lnum)
 
 	else:
-		print checkTag(l[1])
+		print checkTag(l[1], lnum)
 	print
