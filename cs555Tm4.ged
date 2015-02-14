@@ -1,0 +1,147 @@
+Team 4 Names
+James Stys
+Justin Pattison-Schmidt
+Michael Paulauski
+Harshil Bhatt 
+0 HEAD
+1 SOUR Family Echo
+2 WWW http://www.familyecho.com/
+1 FILE My Family
+1 DATE 1 FEB 2015
+1 DEST ANSTFILE
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 SUBM @I1@
+2 NAME Jhon Smith
+1 SUBN
+1 CHAR UTF-8
+0 @I1@ INDI
+1 NAME Jhon /Smith/
+2 GIVN Jhon
+2 SURN Smith
+2 _MARNM Smith
+1 SEX M
+1 BIRT
+2 DATE 2 MAR 1958
+1 FAMS @F1@
+1 FAMC @F2@
+0 @I2@ INDI
+1 NAME Gary /Smith/
+2 GIVN Gary
+2 SURN Smith
+2 _MARNM Smith
+1 SEX M
+1 BIRT
+2 DATE 1 JAN 1932
+1 FAMS @F2@
+0 @I3@ INDI
+1 NAME Linda /Smith/
+2 GIVN Linda
+2 SURN Smith
+2 _MARNM Smith
+1 SEX F
+1 BIRT
+2 DATE 1 FEB 1930
+1 FAMS @F2@
+0 @I4@ INDI
+1 NAME Fiona /Cox/
+2 GIVN Fiona
+2 SURN Cox
+2 _MARNM Smith
+1 SEX F
+1 BIRT
+2 DATE 2 MAR 1959
+1 FAMS @F1@
+1 FAMS @F3@
+0 @I5@ INDI
+1 NAME Peter /Smith/
+2 GIVN Peter
+2 SURN Smith
+2 _MARNM Smith
+1 SEX M
+1 BIRT
+2 DATE 5 MAY 1963
+1 FAMS @F4@
+1 FAMC @F2@
+0 @I6@ INDI
+1 NAME Shruti /Shah/
+2 GIVN Shruti
+2 SURN Shah
+2 _MARNM Smith
+1 SEX F
+1 BIRT
+2 DATE 5 JUL 1963
+1 FAMS @F4@
+0 @I7@ INDI
+1 NAME David /Smith/
+2 GIVN David
+2 SURN Smith
+2 _MARNM Smith
+1 SEX M
+1 BIRT
+2 DATE 2 MAR 1987
+1 FAMC @F1@
+0 @I8@ INDI
+1 NAME Shane /Smith/
+2 GIVN Shane
+2 SURN Smith
+2 _MARNM Smith
+1 SEX M
+1 BIRT
+2 DATE 1 FEB 1989
+1 FAMC @F4@
+0 @I9@ INDI
+1 NAME Raj /Patel/
+2 GIVN Raj
+2 SURN Patel
+2 _MARNM Patel
+1 SEX M
+1 BIRT
+2 DATE 1 FEB 1954
+1 DEAT Y
+2 DATE 4 APR 1984
+1 FAMS @F3@
+0 @I10@ INDI
+1 NAME Peter /Patel/
+2 GIVN Peter
+2 SURN Patel
+2 _MARNM Patel
+1 SEX M
+1 BIRT
+2 DATE 1 JAN 1972
+1 FAMC @F3@
+0 @I11@ INDI
+1 NAME Elizabeth /Smith/
+2 GIVN Elizabeth
+2 SURN Smith
+2 _MARNM Smith
+1 SEX F
+1 BIRT
+2 DATE 2 MAR 1989
+1 FAMC @F1@
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I4@
+1 CHIL @I7@
+1 CHIL @I11@
+1 MARR
+1 _CURRENT Y
+0 @F3@ FAM
+1 HUSB @I9@
+1 WIFE @I4@
+1 CHIL @I10@
+1 _CURRENT N
+0 @F2@ FAM
+1 HUSB @I2@
+1 WIFE @I3@
+1 CHIL @I1@
+1 CHIL @I5@
+1 MARR
+1 _CURRENT Y
+0 @F4@ FAM
+1 HUSB @I5@
+1 WIFE @I6@
+1 CHIL @I8@
+1 _CURRENT Y
+0 TRLR
