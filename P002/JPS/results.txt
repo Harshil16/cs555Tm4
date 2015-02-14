@@ -1,0 +1,675 @@
+﻿0 NOTE Justin Pattison-Schmidt
+
+﻿0
+NOTE
+
+0 HEAD
+
+0
+Invalid Tag
+
+1 SOUR Geni.com
+
+1
+Invalid Tag
+
+2 VERS 1.0
+
+2
+Invalid Tag
+
+1 DATE 01 FEB 2015
+
+1
+DATE
+
+2 TIME 19:01:58
+
+2
+Invalid Tag
+
+1 SUBM @S6000000031211155103@
+
+1
+Invalid Tag
+
+1 GEDC
+
+1
+Invalid Tag
+
+2 VERS 5.5
+
+2
+Invalid Tag
+
+2 FORM LINEAGE-LINKED
+
+2
+Invalid Tag
+
+1 CHAR UTF-8
+
+1
+Invalid Tag
+
+0 @I6000000031211155103@ INDI
+
+55103@
+Invalid Tag
+
+ 1 NAME Joe /Schmidt/
+
+1
+NAME
+
+  2 GIVN Joe
+
+2
+Invalid Tag
+
+  2 SURN Schmidt
+
+2
+Invalid Tag
+
+ 1 SEX M
+
+1
+SEX
+
+ 1 BIRT
+
+1
+Invalid Tag
+
+  2 DATE 10 JUL 1984
+
+2
+DATE
+
+ 1 FAMC @F6000000031211534768@
+
+1
+FAMC
+
+ 1 RFN geni:6000000031211155103
+
+1
+Invalid Tag
+
+ 1 CHAN
+
+1
+Invalid Tag
+
+  2 DATE 01 FEB 2015
+
+2
+DATE
+
+   3 TIME 18:58:13
+
+3
+Invalid Tag
+
+0 @I6000000031211534764@ INDI
+
+34764@
+Invalid Tag
+
+ 1 NAME Mary /Kole/
+
+1
+NAME
+
+  2 GIVN Mary
+
+2
+Invalid Tag
+
+  2 SURN Kole
+
+2
+Invalid Tag
+
+ 1 SEX F
+
+1
+SEX
+
+ 1 BIRT
+
+1
+Invalid Tag
+
+ 1 DEAT
+
+1
+Invalid Tag
+
+ 1 FAMS @F6000000031211534768@
+
+1
+FAMS
+
+ 1 RFN geni:6000000031211534764
+
+1
+Invalid Tag
+
+ 1 CHAN
+
+1
+Invalid Tag
+
+  2 DATE 01 FEB 2015
+
+2
+DATE
+
+   3 TIME 18:59:23
+
+3
+Invalid Tag
+
+0 @I6000000031211951948@ INDI
+
+51948@
+Invalid Tag
+
+ 1 NAME Jason /Schmidt/
+
+1
+NAME
+
+  2 GIVN Jason
+
+2
+Invalid Tag
+
+  2 SURN Schmidt
+
+2
+Invalid Tag
+
+ 1 SEX M
+
+1
+SEX
+
+ 1 BIRT
+
+1
+Invalid Tag
+
+ 1 FAMC @F6000000031211855281@
+
+1
+FAMC
+
+ 1 FAMS @F6000000031211534768@
+
+1
+FAMS
+
+ 1 FAMS @F6000000031211880115@
+
+1
+FAMS
+
+ 1 RFN geni:6000000031211951948
+
+1
+Invalid Tag
+
+ 1 CHAN
+
+1
+Invalid Tag
+
+  2 DATE 01 FEB 2015
+
+2
+DATE
+
+   3 TIME 18:50:15
+
+3
+Invalid Tag
+
+0 @I6000000031211928944@ INDI
+
+28944@
+Invalid Tag
+
+ 1 NAME Mike /Schmidt/
+
+1
+NAME
+
+  2 GIVN Mike
+
+2
+Invalid Tag
+
+  2 SURN Schmidt
+
+2
+Invalid Tag
+
+ 1 SEX M
+
+1
+SEX
+
+ 1 BIRT
+
+1
+Invalid Tag
+
+ 1 FAMC @F6000000031211534768@
+
+1
+FAMC
+
+ 1 RFN geni:6000000031211928944
+
+1
+Invalid Tag
+
+ 1 CHAN
+
+1
+Invalid Tag
+
+  2 DATE 01 FEB 2015
+
+2
+DATE
+
+   3 TIME 18:53:30
+
+3
+Invalid Tag
+
+0 @I6000000031211880111@ INDI
+
+80111@
+Invalid Tag
+
+ 1 NAME Janet /Schmidt/
+
+1
+NAME
+
+  2 GIVN Janet
+
+2
+Invalid Tag
+
+  2 SURN Schmidt
+
+2
+Invalid Tag
+
+  2 _MAR Miller
+
+2
+Invalid Tag
+
+ 1 SEX F
+
+1
+SEX
+
+ 1 BIRT
+
+1
+Invalid Tag
+
+ 1 FAMS @F6000000031211880115@
+
+1
+FAMS
+
+ 1 RFN geni:6000000031211880111
+
+1
+Invalid Tag
+
+ 1 CHAN
+
+1
+Invalid Tag
+
+  2 DATE 01 FEB 2015
+
+2
+DATE
+
+   3 TIME 18:52:29
+
+3
+Invalid Tag
+
+0 @I6000000031211730423@ INDI
+
+30423@
+Invalid Tag
+
+ 1 NAME Margeret /Miller/
+
+1
+NAME
+
+  2 GIVN Margeret
+
+2
+Invalid Tag
+
+  2 SURN Miller
+
+2
+Invalid Tag
+
+  2 _MAR Schmidt
+
+2
+Invalid Tag
+
+ 1 SEX F
+
+1
+SEX
+
+ 1 BIRT
+
+1
+Invalid Tag
+
+ 1 FAMC @F6000000031211880115@
+
+1
+FAMC
+
+ 1 RFN geni:6000000031211730423
+
+1
+Invalid Tag
+
+ 1 CHAN
+
+1
+Invalid Tag
+
+  2 DATE 01 FEB 2015
+
+2
+DATE
+
+   3 TIME 18:54:14
+
+3
+Invalid Tag
+
+0 @I6000000031211884341@ INDI
+
+84341@
+Invalid Tag
+
+ 1 NAME Larry /Schmidt/
+
+1
+NAME
+
+  2 GIVN Larry
+
+2
+Invalid Tag
+
+  2 SURN Schmidt
+
+2
+Invalid Tag
+
+ 1 SEX M
+
+1
+SEX
+
+ 1 BIRT
+
+1
+Invalid Tag
+
+ 1 FAMC @F6000000031211880115@
+
+1
+FAMC
+
+ 1 RFN geni:6000000031211884341
+
+1
+Invalid Tag
+
+ 1 CHAN
+
+1
+Invalid Tag
+
+  2 DATE 01 FEB 2015
+
+2
+DATE
+
+   3 TIME 18:56:36
+
+3
+Invalid Tag
+
+0 @I6000000031211855276@ INDI
+
+55276@
+Invalid Tag
+
+ 1 NAME Martha /Koch/
+
+1
+NAME
+
+  2 GIVN Martha
+
+2
+Invalid Tag
+
+  2 SURN Koch
+
+2
+Invalid Tag
+
+ 1 SEX F
+
+1
+SEX
+
+ 1 BIRT
+
+1
+Invalid Tag
+
+ 1 DEAT
+
+1
+Invalid Tag
+
+ 1 FAMS @F6000000031211855281@
+
+1
+FAMS
+
+ 1 RFN geni:6000000031211855276
+
+1
+Invalid Tag
+
+ 1 CHAN
+
+1
+Invalid Tag
+
+  2 DATE 01 FEB 2015
+
+2
+DATE
+
+   3 TIME 18:57:09
+
+3
+Invalid Tag
+
+0 @I6000000031211931237@ INDI
+
+31237@
+Invalid Tag
+
+ 1 NAME Deitrich /Schmidt/
+
+1
+NAME
+
+  2 GIVN Deitrich
+
+2
+Invalid Tag
+
+  2 SURN Schmidt
+
+2
+Invalid Tag
+
+ 1 SEX M
+
+1
+SEX
+
+ 1 BIRT
+
+1
+Invalid Tag
+
+ 1 DEAT
+
+1
+Invalid Tag
+
+ 1 FAMS @F6000000031211855281@
+
+1
+FAMS
+
+ 1 RFN geni:6000000031211931237
+
+1
+Invalid Tag
+
+ 1 CHAN
+
+1
+Invalid Tag
+
+  2 DATE 01 FEB 2015
+
+2
+DATE
+
+   3 TIME 18:57:36
+
+3
+Invalid Tag
+
+0 @F6000000031211534768@ FAM
+
+34768@
+Invalid Tag
+
+ 1 WIFE @I6000000031211534764@
+
+1
+WIFE
+
+ 1 HUSB @I6000000031211951948@
+
+1
+HUSB
+
+ 1 CHIL @I6000000031211155103@
+
+1
+CHIL
+
+ 1 CHIL @I6000000031211928944@
+
+1
+CHIL
+
+0 @F6000000031211880115@ FAM
+
+80115@
+Invalid Tag
+
+ 1 WIFE @I6000000031211880111@
+
+1
+WIFE
+
+ 1 HUSB @I6000000031211951948@
+
+1
+HUSB
+
+ 1 CHIL @I6000000031211730423@
+
+1
+CHIL
+
+ 1 CHIL @I6000000031211884341@
+
+1
+CHIL
+
+0 @F6000000031211855281@ FAM
+
+55281@
+Invalid Tag
+
+ 1 WIFE @I6000000031211855276@
+
+1
+WIFE
+
+ 1 HUSB @I6000000031211931237@
+
+1
+HUSB
+
+ 1 CHIL @I6000000031211951948@
+
+1
+CHIL
+
+0 @S6000000031211155103@ SUBM
+
+55103@
+Invalid Tag
+
+1 NAME Joe Schmidt
+
+1
+NAME
+
+0 TRLR
+0
+TRLR
+
+
