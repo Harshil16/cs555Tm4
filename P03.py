@@ -1,4 +1,5 @@
 import sys
+import re
 
 class GedI: 
 	def __init__(self, pointer):
@@ -113,8 +114,6 @@ class GedList:
 							break
 						#here's where the magic happens
 						else:
-							self.pointer = spl[1]
-							#print nextl
 							if spl2[1] == "HUSB":
 								tempged.husb = spl2[2]
 							elif spl2[1] == "WIFE":
@@ -156,8 +155,18 @@ class GedList:
 		ret = ""
 
 		return ret
+		
+	def printList(self):
+		for key, value in self.list.iteritems():
+			if re.search("@I.+", key):
+				print key + " " + value.firstname + " " + value.lastname
+			elif re.search("@F.+", key):
+				husb = self.list[value.husb]
+				wife = self.list[value.wife]
+				print key + " Husband: " + husb.firstname + " " + husb.lastname + " Wife: " + wife.firstname + " " + wife.lastname
 
 #and now for the main
 
 g = GedList("sample.ged")
+g.printList()
 
