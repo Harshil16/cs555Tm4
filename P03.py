@@ -1,19 +1,23 @@
 import sys
 
 class GedI: 
-	def __init__(self):
-		self.name = None
+	def __init__(self, pointer):
+		self.pointer = pointer
+		self.firstname = None
+		self.lastname = None
 		self.sex = None
 		self.birt= None
 		self.deat = None
 		self.famc = None
 		self.fams = None
 class GedF:
-	def __init__(self):
+	def __init__(self, pointer):
+		self.pointer = pointer
 		self.marr = None
 		self.husb = None
 		self.wife = None
 		self.chil = None
+		self.div = None
 
 
 
@@ -35,7 +39,7 @@ class GedList:
 
 			spl = line.split()
 
-			if line == "0 TRLR":
+			if spl[1] == "TRLR":
 				break
 
 			#don't even bother if it's not a valid tag
@@ -51,7 +55,7 @@ class GedList:
 			#it's good
 			else:
 				if spl[2] == "INDI":
-					tempged = GedI()
+					tempged = GedI(spl[1])
 					while True:
 						#get the next line until the end of the new entity
 						try:
@@ -69,10 +73,18 @@ class GedList:
 							break
 						#here's where the magic happens
 						else:
-							if spl2[]
+							print nextl
+							if spl2[1] == "NAME":
+								tempged.firstname = spl2[2]
+								tempged.lastname = spl2[3].translate(None, "/")
+							elif spl2[1] == "BIRT":
+								birtline = lines[i+2].split()
+								tempged.birt = birtline[2] + " " + birtline[3] + " " + birtline[4]
+							
+
 						i +=1
 				elif spl[2] == "FAM":
-					tempged = GedF()
+					tempged = GedF(spl[1])
 					while True:
 						#get the next line until the end of the new entity
 						try:
@@ -90,6 +102,8 @@ class GedList:
 							break
 						#here's where the magic happens
 						else:
+							self.pointer = spl[1]
+							print nextl
 
 						i +=1
 
