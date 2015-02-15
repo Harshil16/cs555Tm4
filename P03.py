@@ -73,16 +73,27 @@ class GedList:
 							break
 						#here's where the magic happens
 						else:
-							print nextl
+							#print nextl
 							if spl2[1] == "NAME":
 								tempged.firstname = spl2[2]
 								tempged.lastname = spl2[3].translate(None, "/")
-							elif spl2[1] == "BIRT":
-								birtline = lines[i+2].split()
-								tempged.birt = birtline[2] + " " + birtline[3] + " " + birtline[4]
-							
-
-						i +=1
+							elif spl2[1] == "BIRT" or spl2[1] == "DEAT":
+								dateline = lines[i+2].split()
+								if spl2[1] == "BIRT":
+									tempged.birt = dateline[2] + " " + dateline[3] + " " + dateline[4]
+								else:
+									tempged.deat = dateline[2] + " " + dateline[3] + " " + dateline[4]
+								i += 1  #Skip an extra line since we read 2
+							elif spl2[1] == "SEX":
+								tempged.sex = spl2[2]
+							elif spl2[1] == "FAMC":
+								tempged.famc = spl2[2]
+							elif spl2[1] == "FAMS":
+								tempged.fams = spl2[2]
+						i += 1
+					self.list[tempged.pointer] = tempged
+					print "Added " + tempged.pointer + " to list"
+					
 				elif spl[2] == "FAM":
 					tempged = GedF(spl[1])
 					while True:
@@ -103,9 +114,17 @@ class GedList:
 						#here's where the magic happens
 						else:
 							self.pointer = spl[1]
-							print nextl
-
-						i +=1
+							#print nextl
+							if spl2[1] == "HUSB":
+								tempged.husb = spl2[2]
+							elif spl2[1] == "WIFE":
+								tempged.wife = spl2[2]
+							elif spl2[1] == "CHIL":
+								tempged.chil = spl2[2]
+							
+						i += 1
+					print "Added " + tempged.pointer + " to list"
+					self.list[tempged.pointer] = tempged
 
 
 
