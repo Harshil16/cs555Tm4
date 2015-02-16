@@ -160,7 +160,7 @@ class GedList:
 		print item
 		if 'F' in item:
 			print item.translate(None,"@F")
-			return int("1"+item.translate(None, "@F"))
+			return int("999999"+item.translate(None, "@F"))
 		else:
 			print item.translate(None, "@I")
 			return int("0"+item.translate(None,"@I"))
