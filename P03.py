@@ -160,10 +160,10 @@ class GedList:
 		print item
 		if 'F' in item:
 			print item.translate(None,"@F")
-			return int("0"+item.translate(None, "@F"))
+			return int("1"+item.translate(None, "@F"))
 		else:
 			print item.translate(None, "@I")
-			return int("1"+item.translate(None,"@I"))
+			return int("0"+item.translate(None,"@I"))
 		
 	def printList(self):
 		sorted_x = sorted(self.list.keys(), None, key=self.getKey)				
