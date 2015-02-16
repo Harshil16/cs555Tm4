@@ -1,6 +1,5 @@
 import sys
 import re
-from mercurial.config import sortdict
 
 class GedI: 
 	def __init__(self, pointer):
@@ -151,14 +150,23 @@ class GedList:
 			else:
 				return False
 
-	def __str__(self):
+	# def __str__(self):
 
-		ret = ""
+	# 	ret = ""
 
-		return ret
+	# 	return ret
+
+	def getKey(self, item):
+		print item
+		if 'F' in item:
+			print item.translate(None,"@F")
+			return int("0"+item.translate(None, "@F"))
+		else:
+			print item.translate(None, "@I")
+			return int("1"+item.translate(None,"@I"))
 		
 	def printList(self):
-		sorted_x = sorted(self.list.keys())				
+		sorted_x = sorted(self.list.keys(), None, key=self.getKey)				
 		for sorted_key in sorted_x:		
 			for key, value in self.list.iteritems():
  						if re.search("@I.+", key) and key == sorted_key:
