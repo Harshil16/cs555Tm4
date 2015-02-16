@@ -93,7 +93,7 @@ class GedList:
 								tempged.fams = spl2[2]
 						i += 1
 					self.list[tempged.pointer] = tempged
-					print "Added " + tempged.pointer + " to list"
+					# print "Added " + tempged.pointer + " to list"
 					
 				elif spl[2] == "FAM":
 					tempged = GedF(spl[1])
@@ -122,7 +122,7 @@ class GedList:
 								tempged.chil = spl2[2]
 							
 						i += 1
-					print "Added " + tempged.pointer + " to list"
+					# print "Added " + tempged.pointer + " to list"
 					self.list[tempged.pointer] = tempged
 
 
@@ -157,12 +157,9 @@ class GedList:
 	# 	return ret
 
 	def getKey(self, item):
-		print item
 		if 'F' in item:
-			print item.translate(None,"@F")
 			return int("999999"+item.translate(None, "@F"))
 		else:
-			print item.translate(None, "@I")
 			return int("0"+item.translate(None,"@I"))
 		
 	def printList(self):
