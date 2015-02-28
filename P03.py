@@ -16,7 +16,7 @@ class GedI:
 		self.fams = None
 		
 	def getAge(self):
-		if self.birt != None:
+		if self.birt is not None:
 			birtDate = datetime.datetime.strptime(self.birt, "%d %b %Y").date()
 			curDate = date.today()
 			return curDate.year - birtDate.year - ((curDate.month, curDate.day) < (birtDate.month, birtDate.day))
@@ -94,6 +94,7 @@ class GedList:
 									dateline[2] = "0" + dateline[2] if int(dateline[2]) < 10 else dateline[2]
 									tempged.birt = dateline[2] + " " + dateline[3] + " " + dateline[4]
 								else:
+									dateline[2] = "0" + dateline[2] if int(dateline[2]) < 10 else dateline[2]
 									tempged.deat = dateline[2] + " " + dateline[3] + " " + dateline[4]
 								i += 1  #Skip an extra line since we read 2
 							elif spl2[1] == "SEX":
@@ -131,6 +132,14 @@ class GedList:
 								tempged.wife = spl2[2]
 							elif spl2[1] == "CHIL":
 								tempged.chil = spl2[2]
+							elif spl2[1] == "MARR" or spl2[1] == "DIV":
+								dateline = lines[i+2].split()
+								if spl2[1] == "MARR":
+									dateline[2] = "0" + dateline[2] if int(dateline[2]) < 10 else dateline[2]
+									tempged.marr = dateline[2] + " " + dateline[3] + " " + dateline[4]
+								else:
+									dateline[2] = "0" + dateline[2] if int(dateline[2]) < 10 else dateline[2]
+									tempged.div = dateline[2] + " " + dateline[3] + " " + dateline[4]
 							
 						i += 1
 					# print "Added " + tempged.pointer + " to list"
@@ -172,6 +181,7 @@ class GedList:
 			return int("999999"+item.translate(None, "@F"))
 		else:
 			return int("0"+item.translate(None,"@I"))
+
 		
 	def printList(self):
 		sorted_x = sorted(self.list.keys(), None, key=self.getKey)				
@@ -189,7 +199,7 @@ class GedList:
 		for id, item in self.list.iteritems():
 			if re.search("@I.+", id):
 				testFail = False
-				if item.fams != None and item.famc != None:
+				if item.fams is not None and item.famc is not None:
 					spouseId = self.list[item.fams].wife if self.list[item.fams].husb == id else self.list[item.fams].husb
 					parentId1 = self.list[item.famc].wife
 					parentId2 = self.list[item.famc].husb
@@ -208,7 +218,7 @@ class GedList:
 		for id, item in self.list.iteritems():
 			if re.search("@I.+", id):
 				testFail = False
-				if item.fams != None:
+				if item.fams is not None:
 					spouseId = self.list[item.fams].wife if self.list[item.fams].husb == id else self.list[item.fams].husb
 					
 					if self.list[spouseId].getAge() < 18:
@@ -220,7 +230,7 @@ class GedList:
 						
 	def birthDeathCheck(self):
 		for id, item in self.list.iteritems():
-			if re.search("@I.+", id):
+			if "@I" in id:
 				testFail = False
 				if item.deat is None:
 					continue
@@ -232,12 +242,41 @@ class GedList:
 						
 				if testFail == False:
 					print item.firstname + " " + item.lastname + "'s birth and death dates look normal -- Passed"
-			
+
+
+	def timeLine(self):
+		timelinelist = {}
+		for id, item in self.list.iteritems():
+			if "@I" in id:
+				if item.birt is not None:
+					birthday = datetime.datetime.strptime(item.birt, "%d %b %Y").date()
+					timelinelist[birthday] = item.firstname + " " + item.lastname + " was born on " + str(birthday)
+				if item.deat is not None:
+					deathday = datetime.datetime.strptime(item.deat, "%d %b %Y").date()
+					timelinelist[deathday] = item.firstname + " " + item.lastname + " died on " + str(deathday)
+			elif "@F" in id:
+				if item.marr is not None:
+					marrday = datetime.datetime.strptime(item.marr, "%d %b %Y").date()
+					husband = self.list.get(item.husb)
+					wife = self.list.get(item.wife)
+					timelinelist[marrday] = husband.firstname + " " + husband.lastname + " and " + wife.firstname + " " + wife.lastname + " were married on " +str(marrday)
+				if item.div is not None:
+					divday =datetime.datetime.strptime(item.div, "%d %b %Y").date()
+					timelinelist[divday] = husband.firstname + " " + husband.lastname + " and " + wife.firstname + " " + wife.lastname + " got divorced on " + str(divday)
+
+		sorted_x = [value for (key, value) in sorted(timelinelist.items())]
+
+		for event in sorted_x:
+			print event
+
+
+		
 
 #and now for the main
 
-g = GedList("gedcoms/us01.ged")
+g = GedList("gedcoms/us24.ged")
 #g.printList()
 g.parentMarriage()
 g.minorMarriage()
 g.birthDeathCheck()
+g.timeLine()
