@@ -1,5 +1,8 @@
 import sys
 import re
+import time
+import datetime
+from datetime import date
 
 class GedI: 
 	def __init__(self, pointer):
@@ -11,6 +14,13 @@ class GedI:
 		self.deat = None
 		self.famc = None
 		self.fams = None
+		
+	def getAge(self):
+		if self.birt != None:
+			birtDate = datetime.datetime.strptime(self.birt, "%d %b %Y").date()
+			curDate = date.today()
+			return curDate.year - birtDate.year - ((curDate.month, curDate.day) < (birtDate.month, birtDate.day))
+			
 class GedF:
 	def __init__(self, pointer):
 		self.pointer = pointer
@@ -81,6 +91,7 @@ class GedList:
 							elif spl2[1] == "BIRT" or spl2[1] == "DEAT":
 								dateline = lines[i+2].split()
 								if spl2[1] == "BIRT":
+									dateline[2] = "0" + dateline[2] if int(dateline[2]) < 10 else dateline[2]
 									tempged.birt = dateline[2] + " " + dateline[3] + " " + dateline[4]
 								else:
 									tempged.deat = dateline[2] + " " + dateline[3] + " " + dateline[4]
@@ -172,9 +183,47 @@ class GedList:
 					 		husb = self.list[value.husb]
 					 		wife = self.list[value.wife]
 					 		print key + " Husband: " + husb.firstname + " " + husb.lastname + " Wife: " + wife.firstname + " " + wife.lastname
+							
+	def parentMarriage(self):
+		for id, item in self.list.iteritems():
+			if re.search("@I.+", id):
+				testFail = False
+				if item.fams != None and item.famc != None:
+					spouseId = self.list[item.fams].wife if self.list[item.fams].husb == id else self.list[item.fams].husb
+					parentId1 = self.list[item.famc].wife
+					parentId2 = self.list[item.famc].husb
+					
+					if parentId1 == spouseId:
+						testFail = True
+						print item.firstname + " " + item.lastname + " is married to their parent " + self.list[parentId1].firstname + " " + self.list[parentId1].lastname + " -- Failed"
+					elif parentId2 == spouseId:
+						testFail = True
+						print item.firstname + " " + item.lastname + " is married to their parent " + self.list[parentId2].firstname + " " + self.list[parentId2].lastname + " -- Failed"
+						
+				if testFail == False:
+					print item.firstname + " "  + item.lastname + " not married to parent -- Passed"
+			
+	def minorMarriage(self):
+		for id, item in self.list.iteritems():
+			if re.search("@I.+", id):
+				testFail = False
+				if item.fams != None:
+					spouseId = self.list[item.fams].wife if self.list[item.fams].husb == id else self.list[item.fams].husb
+					
+					if self.list[spouseId].getAge() < 18:
+						testFail = True
+						print item.firstname + " " + item.lastname + " is married to a minor " + self.list[spouseId].firstname + " " + self.list[spouseId].lastname + " -- Failed"
+						
+				if testFail == False:
+					print item.firstname + " " + item.lastname + " not married to minor -- Passed"
+						
+		
+			
 
 #and now for the main
 
-g = GedList("cs555Tm4.ged")
-g.printList()
+g = GedList("gedcoms/us16.ged")
+#g.printList()
+g.parentMarriage()
+g.minorMarriage()
 
