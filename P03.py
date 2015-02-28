@@ -175,6 +175,6 @@ class GedList:
 
 #and now for the main
 
-g = GedList("sample.ged")
+g = GedList("cs555Tm4.ged")
 g.printList()
 
