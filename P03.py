@@ -185,6 +185,7 @@ class GedList:
 					 		print key + " Husband: " + husb.firstname + " " + husb.lastname + " Wife: " + wife.firstname + " " + wife.lastname
 							
 	def parentMarriage(self):
+		# note: in python 3, iter() is the exact same as iteritems(). https://stackoverflow.com/questions/10458437/what-is-the-difference-between-dict-items-and-dict-iteritems
 		for id, item in self.list.iteritems():
 			if re.search("@I.+", id):
 				testFail = False
@@ -217,13 +218,26 @@ class GedList:
 				if testFail == False:
 					print item.firstname + " " + item.lastname + " not married to minor -- Passed"
 						
-		
+	def birthDeathCheck(self):
+		for id, item in self.list.iteritems():
+			if re.search("@I.+", id):
+				testFail = False
+				if item.deat is None:
+					continue
+				birthDate = datetime.datetime.strptime(item.birt, "%d %b %Y").date()
+				deathDate = datetime.datetime.strptime(item.deat, "%d %b %Y").date()
+				if birthDate>deathDate:
+					testFail = True
+					print item.firstname + " " + item.lastname + " has died before they are born -- Failed"
+						
+				if testFail == False:
+					print item.firstname + " " + item.lastname + "'s birth and death dates look normal -- Passed"
 			
 
 #and now for the main
 
-g = GedList("gedcoms/us16.ged")
+g = GedList("gedcoms/us01.ged")
 #g.printList()
 g.parentMarriage()
 g.minorMarriage()
-
+g.birthDeathCheck()
