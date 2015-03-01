@@ -3,6 +3,7 @@ import re
 import time
 import datetime
 from datetime import date
+from __builtin__ import str
 
 class GedI: 
 	def __init__(self, pointer):
@@ -27,7 +28,7 @@ class GedF:
 		self.marr = None
 		self.husb = None
 		self.wife = None
-		self.chil = None
+		self.chil = []
 		self.div = None
 
 
@@ -37,6 +38,7 @@ class GedList:
 	def __init__(self, filename):
 		self.tagchecks = {"INDI":0, "NAME":1, "SEX":1, "BIRT":1, "DEAT":1, "FAMC":1, "FAMS":1, "FAM":0, "MARR":1, "HUSB":1, "WIFE":1, "CHIL":1, "DIV":1, "DATE":2, "TRLR":0, "NOTE":0}
 		self.list={}
+		numFamily = 0
 
 		f = open(filename,'r')
 
@@ -131,7 +133,7 @@ class GedList:
 							elif spl2[1] == "WIFE":
 								tempged.wife = spl2[2]
 							elif spl2[1] == "CHIL":
-								tempged.chil = spl2[2]
+								tempged.chil.append(spl2[2])
 							elif spl2[1] == "MARR" or spl2[1] == "DIV":
 								dateline = lines[i+2].split()
 								if spl2[1] == "MARR":
@@ -242,8 +244,26 @@ class GedList:
 						
 				if testFail == False:
 					print item.firstname + " " + item.lastname + "'s birth and death dates look normal -- Passed"
+					
+ 	def childParentBirthDeathCheck(self):
+ 		childDod = None
+ 		for id, item in self.list.iteritems():
+		    if "@F" in id:
+		    	fatherDob = datetime.datetime.strptime(self.list.get(item.husb).birt, "%d %b %Y").date() 
+		    	motherDob = datetime.datetime.strptime(self.list.get(item.wife).birt, "%d %b %Y").date()
+		    	for child in item.chil:
+		    		
+		    		if self.list.get(child).birt:
+		    		    childDob  = datetime.datetime.strptime(self.list.get(child).birt, "%d %b %Y").date()
+		    		    if childDob < fatherDob or childDob < motherDob:
+		    		        print "Error: " + self.list.get(child).firstname + " " + self.list.get(child).lastname + "'s birth is before their parent's birth."
 
+		    		if self.list.get(child).deat:
+		    		    childDod  = datetime.datetime.strptime(self.list.get(child).deat, "%d %b %Y").date()
+		    		    if childDod < fatherDob or childDod < motherDob:	
+		    			    print "Error: " + self.list.get(child).firstname + " " + self.list.get(child).lastname + "'s death is before their parent's birth."
 
+				        			
 	def timeLine(self):
 		timelinelist = {}
 		for id, item in self.list.iteritems():
@@ -276,6 +296,7 @@ class GedList:
 
 g = GedList("gedcoms/us24.ged")
 #g.printList()
+g.childParentBirthDeathCheck()
 g.parentMarriage()
 g.minorMarriage()
 g.birthDeathCheck()
