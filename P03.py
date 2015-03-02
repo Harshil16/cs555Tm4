@@ -289,47 +289,15 @@ class GedList:
 		for event in sorted_x:
 			print event
 
-	def deathMarriageCheck(self):
-	   	for id, item in self.list.iteritems():
-			if "@F" in id:
-				if item.marr:				    
-				    marrDate = datetime.datetime.strptime(item.marr, "%d %b %Y").date()
-				    
-				    if self.list[item.husb].deat is not None:
-				    	husbDeathDate=datetime.datetime.strptime(self.list[item.husb].deat, "%d %b %Y").date()
-				    	if husbDeathDate < marrDate:
-				    	    print "Error: " + self.list[item.husb].firstname + " " + self.list[item.husb].lastname + " died before marriage"
-				    	
-					if self.list[item.wife].deat is not None:
-						wifeDeathDate=datetime.datetime.strptime(self.list[item.wife].deat, "%d %b %Y").date()
-						if wifeDeathDate < marrDate:
-							print "Error: " + self.list[item.wife].firstname + " " + self.list[item.wife].lastname + " died before marriage"
-											
-	def marriageBirthCheck(self):
-	   	for id, item in self.list.iteritems():
-			if "@F" in id:
-				if item.marr:				    
-				    marrDate = datetime.datetime.strptime(item.marr, "%d %b %Y").date()
-				    
-				    if self.list[item.husb].birt is not None:
-				    	husbBirthDate=datetime.datetime.strptime(self.list[item.husb].birt, "%d %b %Y").date()
-				    	if husbBirthDate > marrDate:
-				    	    print "Error: " + self.list[item.husb].firstname + " " + self.list[item.husb].lastname + " was born after marriage"
-				    	
-					if self.list[item.wife].birt is not None:
-						wifeBirthDate=datetime.datetime.strptime(self.list[item.wife].birt, "%d %b %Y").date()
-						if wifeBirthDate > marrDate:
-							print "Error: " + self.list[item.wife].firstname + " " + self.list[item.wife].lastname + " was born after marriage"
-							
+
+		
+
 #and now for the main
 
-g = GedList("gedcoms/sprint1.ged")
-
+g = GedList("gedcoms/us24.ged")
 #g.printList()
 g.childParentBirthDeathCheck()
 g.parentMarriage()
 g.minorMarriage()
 g.birthDeathCheck()
 g.timeLine()
-g.deathMarriageCheck()
-g.marriageBirthCheck()
